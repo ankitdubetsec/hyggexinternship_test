@@ -1,0 +1,77 @@
+.n-wrapper{
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+.n-left{
+    flex: 1;
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+.n-name{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.n-right{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    font-weight: 400;
+}
+.n-list{
+    flex: 10;
+}
+.li{
+    background: #3A3740;
+    /* Contact */
+
+width: 68px;
+height: 22px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+color: #3A3740;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+}
+.ll:hover {
+    cursor: pointer;
+    color: var(--orange) /* Replace with your desired color */
+  }
+.n-list>ul{
+    display: flex;
+    gap: 2rem;
+    margin-right: 4rem;
+}
+
+.n-list > ul >Link>li:hover {
+    cursor: pointer;
+    color: var(--orange);
+}
+
+
+.n-button{
+    flex: 2;
+    transform: scale(0.85);
+}
+@media screen and (max-width : 480px){
+    .n-list{
+        display: none;
+    }
+    .n-button{
+        display: none;
+    }
+}
