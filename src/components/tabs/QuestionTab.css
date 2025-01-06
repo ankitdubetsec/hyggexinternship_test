@@ -1,0 +1,119 @@
+.question-tab {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  width: 100%; /* Full width */
+  text-align: left; /* Ensure everything is left-aligned */
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  background-color: transparent; /* Removed the grayish background */
+}
+
+.question-text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left; /* Left-align the question text */
+}
+
+.question-image {
+  width: 100%; /* Full width of the container */
+  max-height: 200px; /* Reduced height for landscape mode */
+  object-fit: contain; /* Maintain aspect ratio */
+  margin: 20px 0; /* Add space above and below the image */
+  display: block; /* Make the image a block element */
+  margin-left: 0; /* Ensure image is left-aligned */
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap; /* Allows options to wrap to the next line */
+  gap: 15px;
+  width: 100%; /* Ensure options span the full width */
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  width: 48%; /* Make each option take up half the width */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.option-label:hover {
+  background-color: #f8f9fa; /* Hover effect for the options */
+}
+
+.option-label input {
+  margin-right: 15px;
+  accent-color: #f49242; /* Theme color */
+  display: none; /* Hide the default radio input */
+}
+
+.option-label:hover .option-text {
+  color: #000;
+}
+
+.option-label input:checked + .option-text {
+  font-weight: bold;
+  color: #164ec0; /* Theme color */
+}
+
+.option-label.correct {
+  border-color: #28a745;
+  background-color: #d4edda;
+}
+
+.option-label.incorrect {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+.feedback {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center; /* Center the feedback message */
+}
+
+.correct-feedback {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.incorrect-feedback {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Action buttons styling */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Space between options and buttons */
+}
+
+.left-button,
+.right-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #164ec0; /* Theme color */
+  transition: background-color 0.3s ease;
+}
+
+.left-button:hover,
+.right-button:hover {
+  background-color: #0a3a84; /* Darker shade on hover */
+}

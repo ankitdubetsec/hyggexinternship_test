@@ -1,0 +1,60 @@
+/* Main container */
+.submissions-tab {
+  padding: 0;
+  margin-bottom: 20px; /* Adds space below the entire container */
+}
+
+/* Table styling */
+.submissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px; /* Adds padding below the table */
+}
+
+/* Table header */
+.submissions-table thead th {
+  font-weight: bold;
+  color: #6b7280;
+  padding-bottom: 10px;
+}
+
+/* Table rows */
+.submissions-table tbody tr {
+  height: 40px;
+}
+
+.submissions-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.submissions-table tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Status column */
+.status {
+  font-weight: bold;
+}
+
+.status.correct {
+  color: #16a34a; /* Green for Correct */
+}
+
+.status.incorrect {
+  color: #dc2626; /* Red for Incorrect */
+}
+
+/* Remove borders and add subtle row spacing */
+.submissions-table th,
+.submissions-table td {
+  padding: 8px 0;
+  border: none;
+}
+
+/* Add spacing to the entire table */
+.submissions-table tbody {
+  margin-top: 8px;
+}

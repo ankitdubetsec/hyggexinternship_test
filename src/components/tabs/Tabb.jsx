@@ -1,91 +1,44 @@
-import React, { useState } from 'react';
-import './Tab.css'
-import ImageCarousel from '../../carousel/ImageCarousel';
-import courimg2 from '../../img/courimg2.png'
-function Tabb() {
-  const images = [
-    courimg2,
-    courimg2,
-    courimg2,
-    // Add more image URLs as needed
-  ];
-  return (
-    <div className="tabs">
-      <Tabs>
-        <Tab label="Study">
-          
-        <ImageCarousel images={images} />
-            
-          
-        </Tab>
-        <Tab label="Quiz">
-          <div>
-          
-            <p>Tab 2 content</p>
-          </div>
-        </Tab>
-        <Tab label="Test">
-          <div>
-         
-            <p>Tab 3 content</p>
-          </div>
-        </Tab>
-        <Tab label="Game">
-          <div>
-          
-            <p>Tab 4 content</p>
-          </div>
-        </Tab>
-        <Tab label="Others">
-          <div>
-           
-            <p>Tab 5 content</p>
-          </div>
-        </Tab>
-      </Tabs>
-    </div>
-  );
-}
+import React, { useState } from "react";
+import "./Tab.css";
+import QuestionTab from "./QuestionTab";
+import SolutionTab from "./SolutionTab";
+import HintsTab from "./HintsTab";
+import SubmissionsTab from "./SubmissionsTab";
 
-function Tabs({ children }) {
-  const [activeTab, setActiveTab] = useState(children[0].props.label);
+const Tabb = () => {
+  const [activeTab, setActiveTab] = useState("Question");
 
-  const changeTab = (tab) => {
-    setActiveTab(tab);
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "Question":
+        return <QuestionTab />;
+      case "Solution":
+        return <SolutionTab />;
+      case "Hints":
+        return <HintsTab />;
+      case "Submissions":
+        return <SubmissionsTab />;
+      default:
+        return null;
+    }
   };
 
-  let content;
-
-  React.Children.forEach(children, child => {
-    if (child.props.label === activeTab) {
-      content = child.props.children;
-    }
-  });
-
-  const buttons = React.Children.map(children, child => child.props.label);
-
   return (
-    <div>
-      <TabButtons activeTab={activeTab} buttons={buttons} changeTab={changeTab} />
-      <div className="tab-content">{content}</div>
+    <div className="tabs">
+      <div className="tab-buttons">
+        {["Question", "Solution", "Hints", "Submissions"].map((tab) => (
+          <button
+            key={tab}
+            className={activeTab === tab ? "active" : ""}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+      <div className="tab-content">{renderTabContent()}</div>
     </div>
   );
-}
-
-function TabButtons({ buttons, changeTab, activeTab }) {
-  return (
-    <div className="tab-buttons">
-      {buttons.map(button => (
-        <button className={button === activeTab ? 'active' : ''} onClick={() => changeTab(button)} key={button}>
-          {button}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-function Tab(props) {
-  return <React.Fragment>{props.children}</React.Fragment>;
-}
+};
 
 export default Tabb;
